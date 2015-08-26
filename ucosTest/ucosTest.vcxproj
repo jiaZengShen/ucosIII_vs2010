@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="app\app_cfg.h" />
+    <ClInclude Include="app\cpu_cfg.h" />
+    <ClInclude Include="app\includes.h" />
+    <ClInclude Include="app\lib_cfg.h" />
+    <ClInclude Include="app\os_app_hooks.h" />
+    <ClInclude Include="app\os_cfg.h" />
+    <ClInclude Include="app\os_cfg_app.h" />
+    <ClInclude Include="BSP\bsp.h" />
+    <ClInclude Include="PORTS\os_cpu.h" />
+    <ClInclude Include="Source\os.h" />
+    <ClInclude Include="Source\os_type.h" />
+    <ClInclude Include="uC-CPU\cpu.h" />
+    <ClInclude Include="uC-CPU\cpu_cache.h" />
+    <ClInclude Include="uC-CPU\cpu_core.h" />
+    <ClInclude Include="uC-CPU\cpu_def.h" />
+    <ClInclude Include="uC-LIB\lib_ascii.h" />
+    <ClInclude Include="uC-LIB\lib_def.h" />
+    <ClInclude Include="uC-LIB\lib_math.h" />
+    <ClInclude Include="uC-LIB\lib_mem.h" />
+    <ClInclude Include="uC-LIB\lib_str.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app\app.c" />
+    <ClCompile Include="app\os_app_hooks.c" />
+    <ClCompile Include="BSP\bsp.c" />
+    <ClCompile Include="BSP\CPU\cpu_bsp.c" />
+    <ClCompile Include="PORTS\os_cpu_c.c" />
+    <ClCompile Include="Source\os_cfg_app.c" />
+    <ClCompile Include="Source\os_core.c" />
+    <ClCompile Include="Source\os_dbg.c" />
+    <ClCompile Include="Source\os_flag.c" />
+    <ClCompile Include="Source\os_int.c" />
+    <ClCompile Include="Source\os_mem.c" />
+    <ClCompile Include="Source\os_msg.c" />
+    <ClCompile Include="Source\os_mutex.c" />
+    <ClCompile Include="Source\os_pend_multi.c" />
+    <ClCompile Include="Source\os_prio.c" />
+    <ClCompile Include="Source\os_q.c" />
+    <ClCompile Include="Source\os_sem.c" />
+    <ClCompile Include="Source\os_stat.c" />
+    <ClCompile Include="Source\os_task.c" />
+    <ClCompile Include="Source\os_tick.c" />
+    <ClCompile Include="Source\os_time.c" />
+    <ClCompile Include="Source\os_tmr.c" />
+    <ClCompile Include="Source\os_var.c" />
+    <ClCompile Include="uC-CPU\cpu_c.c" />
+    <ClCompile Include="uC-CPU\cpu_core.c" />
+    <ClCompile Include="uC-LIB\lib_ascii.c" />
+    <ClCompile Include="uC-LIB\lib_math.c" />
+    <ClCompile Include="uC-LIB\lib_mem.c" />
+    <ClCompile Include="uC-LIB\lib_str.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B7B00B13-EE54-4C64-88FF-F4F43C61C236}</ProjectGuid>
+    <RootNamespace>ucosTest</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ucos">
+      <UniqueIdentifier>{c062cd89-609f-4acb-9f43-c605974f7b42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\source">
+      <UniqueIdentifier>{7645d119-c79f-4f49-a59a-e11d43834b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\cpu">
+      <UniqueIdentifier>{0fa1f14a-cf23-4662-b710-f3087e14a072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\app">
+      <UniqueIdentifier>{27641c4f-55ad-4860-9631-d32e4501b69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\lib">
+      <UniqueIdentifier>{c252ba5e-bd56-4f11-856a-6c6cfd8f1182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\ports">
+      <UniqueIdentifier>{76b0c318-f46c-494e-b38d-2175f2724dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\BSP">
+      <UniqueIdentifier>{3cdae5cb-7b29-47bf-84d0-0e773035f3c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\os.h">
+      <Filter>ucos\source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\os_type.h">
+      <Filter>ucos\source</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-CPU\cpu.h">
+      <Filter>ucos\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-CPU\cpu_cache.h">
+      <Filter>ucos\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-CPU\cpu_core.h">
+      <Filter>ucos\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-CPU\cpu_def.h">
+      <Filter>ucos\cpu</Filter>
+    </ClInclude>
+    <ClInclude Include="app\app_cfg.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\cpu_cfg.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\includes.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\lib_cfg.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\os_app_hooks.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\os_cfg.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\os_cfg_app.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-LIB\lib_ascii.h">
+      <Filter>ucos\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-LIB\lib_def.h">
+      <Filter>ucos\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-LIB\lib_math.h">
+      <Filter>ucos\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-LIB\lib_mem.h">
+      <Filter>ucos\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="uC-LIB\lib_str.h">
+      <Filter>ucos\lib</Filter>
+    </ClInclude>
+    <ClInclude Include="PORTS\os_cpu.h">
+      <Filter>ucos\ports</Filter>
+    </ClInclude>
+    <ClInclude Include="BSP\bsp.h">
+      <Filter>ucos\BSP</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\os_cfg_app.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_core.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_dbg.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_flag.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_int.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_mem.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_msg.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_mutex.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_pend_multi.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_prio.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_q.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_sem.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_stat.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_task.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_tick.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_time.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_tmr.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\os_var.c">
+      <Filter>ucos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-CPU\cpu_c.c">
+      <Filter>ucos\cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-CPU\cpu_core.c">
+      <Filter>ucos\cpu</Filter>
+    </ClCompile>
+    <ClCompile Include="app\app.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app\os_app_hooks.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-LIB\lib_ascii.c">
+      <Filter>ucos\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-LIB\lib_math.c">
+      <Filter>ucos\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-LIB\lib_mem.c">
+      <Filter>ucos\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="uC-LIB\lib_str.c">
+      <Filter>ucos\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="PORTS\os_cpu_c.c">
+      <Filter>ucos\ports</Filter>
+    </ClCompile>
+    <ClCompile Include="BSP\bsp.c">
+      <Filter>ucos\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="BSP\CPU\cpu_bsp.c">
+      <Filter>ucos\BSP</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
