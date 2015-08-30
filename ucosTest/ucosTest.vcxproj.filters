@@ -34,6 +34,33 @@
     <Filter Include="ucos\BSP">
       <UniqueIdentifier>{3cdae5cb-7b29-47bf-84d0-0e773035f3c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lwip">
+      <UniqueIdentifier>{3295e269-be77-4788-b969-c111e45a77df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\netif">
+      <UniqueIdentifier>{705c731c-8f56-4e8f-94d0-7dd3a61dd28f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\netif\PPP">
+      <UniqueIdentifier>{a87735fd-d957-4263-b1c1-06642c77342d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\core">
+      <UniqueIdentifier>{bdb1433b-9ffd-4160-9074-a4f16b32a1bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\core\ipv4">
+      <UniqueIdentifier>{4a14ee8e-efd8-428e-8e60-8382a5307a74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\core\snmp">
+      <UniqueIdentifier>{0c43632b-b6fc-4f8e-8f9e-23d5b153f00f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\api">
+      <UniqueIdentifier>{7f365d08-c864-4e13-8137-6b1a48b5bb68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\win32">
+      <UniqueIdentifier>{361b1b9e-96d7-41c3-8fda-294055ad17d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lwip\pcap">
+      <UniqueIdentifier>{a17e38d5-43b1-4caf-b25c-57ce86bc9239}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\os.h">
@@ -95,6 +122,69 @@
     </ClInclude>
     <ClInclude Include="BSP\bsp.h">
       <Filter>ucos\BSP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\auth.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\chap.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\chpms.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\fsm.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\ipcp.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\lcp.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\magic.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\md5.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\pap.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\ppp.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\ppp_impl.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\pppdebug.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\randm.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\netif\ppp\vj.h">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\win32\lwippools.h">
+      <Filter>lwip\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\win32\pcapif.h">
+      <Filter>lwip\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\win32\pcapif_helper.h">
+      <Filter>lwip\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="LWIP\win32\lwipcfg_msvc.h">
+      <Filter>lwip\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="app\ping.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\ethernetif.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="app\util.h">
+      <Filter>ucos\app</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -185,5 +275,190 @@
     <ClCompile Include="BSP\CPU\cpu_bsp.c">
       <Filter>ucos\BSP</Filter>
     </ClCompile>
+    <ClCompile Include="LWIP\netif\etharp.c">
+      <Filter>lwip\netif</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ethernetif.c">
+      <Filter>lwip\netif</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\slipif.c">
+      <Filter>lwip\netif</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\auth.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\chap.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\chpms.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\fsm.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\ipcp.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\lcp.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\magic.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\md5.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\pap.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\ppp.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\ppp_oe.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\randm.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\netif\ppp\vj.c">
+      <Filter>lwip\netif\PPP</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\def.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\dhcp.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\dns.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\init.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\mem.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\memp.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\netif.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\pbuf.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\raw.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\stats.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\sys.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\tcp.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\tcp_in.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\tcp_out.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\timers.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\udp.c">
+      <Filter>lwip\core</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\autoip.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\icmp.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\igmp.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\inet.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\inet_chksum.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\ip.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\ip_addr.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\ipv4\ip_frag.c">
+      <Filter>lwip\core\ipv4</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\asn1_dec.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\asn1_enc.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\mib_structs.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\mib2.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\msg_in.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\core\snmp\msg_out.c">
+      <Filter>lwip\core\snmp</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\api_lib.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\api_msg.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\err.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\netbuf.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\netdb.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\netifapi.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\sockets.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\api\tcpip.c">
+      <Filter>lwip\api</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\win32\pcapif.c">
+      <Filter>lwip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\win32\pcapif_helper.c">
+      <Filter>lwip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\win32\sio.c">
+      <Filter>lwip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="LWIP\win32\sys_arch.c">
+      <Filter>lwip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="app\ping.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="app\util.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LWIP\netif\FILES">
+      <Filter>lwip\netif</Filter>
+    </None>
   </ItemGroup>
 </Project>

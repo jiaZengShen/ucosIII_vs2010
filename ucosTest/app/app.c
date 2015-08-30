@@ -117,7 +117,8 @@ int  main (void)
 *                   used.  The compiler should not generate any code for this statement.
 *********************************************************************************************************
 */
-
+#include "ping.h"
+#include "lwip/init.h"
 static  void  AppTaskStart (void *p_arg)
 {
     OS_ERR  err;
@@ -133,7 +134,9 @@ static  void  AppTaskStart (void *p_arg)
 #endif
 
     APP_TRACE_DBG(("uCOS-III is Running...\n\r"));
-
+	//lwip_init();
+	tcpip_init(NULL,NULL);
+	ping_init();
     while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
         OSTimeDlyHMSM(0, 0, 1, 0,
                       OS_OPT_TIME_DLY,

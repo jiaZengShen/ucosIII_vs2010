@@ -13,12 +13,33 @@
   <ItemGroup>
     <ClInclude Include="app\app_cfg.h" />
     <ClInclude Include="app\cpu_cfg.h" />
+    <ClInclude Include="app\ethernetif.h" />
     <ClInclude Include="app\includes.h" />
     <ClInclude Include="app\lib_cfg.h" />
     <ClInclude Include="app\os_app_hooks.h" />
     <ClInclude Include="app\os_cfg.h" />
     <ClInclude Include="app\os_cfg_app.h" />
+    <ClInclude Include="app\ping.h" />
+    <ClInclude Include="app\util.h" />
     <ClInclude Include="BSP\bsp.h" />
+    <ClInclude Include="LWIP\netif\ppp\auth.h" />
+    <ClInclude Include="LWIP\netif\ppp\chap.h" />
+    <ClInclude Include="LWIP\netif\ppp\chpms.h" />
+    <ClInclude Include="LWIP\netif\ppp\fsm.h" />
+    <ClInclude Include="LWIP\netif\ppp\ipcp.h" />
+    <ClInclude Include="LWIP\netif\ppp\lcp.h" />
+    <ClInclude Include="LWIP\netif\ppp\magic.h" />
+    <ClInclude Include="LWIP\netif\ppp\md5.h" />
+    <ClInclude Include="LWIP\netif\ppp\pap.h" />
+    <ClInclude Include="LWIP\netif\ppp\ppp.h" />
+    <ClInclude Include="LWIP\netif\ppp\pppdebug.h" />
+    <ClInclude Include="LWIP\netif\ppp\ppp_impl.h" />
+    <ClInclude Include="LWIP\netif\ppp\randm.h" />
+    <ClInclude Include="LWIP\netif\ppp\vj.h" />
+    <ClInclude Include="LWIP\win32\lwipcfg_msvc.h" />
+    <ClInclude Include="LWIP\win32\lwippools.h" />
+    <ClInclude Include="LWIP\win32\pcapif.h" />
+    <ClInclude Include="LWIP\win32\pcapif_helper.h" />
     <ClInclude Include="PORTS\os_cpu.h" />
     <ClInclude Include="Source\os.h" />
     <ClInclude Include="Source\os_type.h" />
@@ -35,8 +56,68 @@
   <ItemGroup>
     <ClCompile Include="app\app.c" />
     <ClCompile Include="app\os_app_hooks.c" />
+    <ClCompile Include="app\ping.c" />
+    <ClCompile Include="app\util.c" />
     <ClCompile Include="BSP\bsp.c" />
     <ClCompile Include="BSP\CPU\cpu_bsp.c" />
+    <ClCompile Include="LWIP\api\api_lib.c" />
+    <ClCompile Include="LWIP\api\api_msg.c" />
+    <ClCompile Include="LWIP\api\err.c" />
+    <ClCompile Include="LWIP\api\netbuf.c" />
+    <ClCompile Include="LWIP\api\netdb.c" />
+    <ClCompile Include="LWIP\api\netifapi.c" />
+    <ClCompile Include="LWIP\api\sockets.c" />
+    <ClCompile Include="LWIP\api\tcpip.c" />
+    <ClCompile Include="LWIP\core\def.c" />
+    <ClCompile Include="LWIP\core\dhcp.c" />
+    <ClCompile Include="LWIP\core\dns.c" />
+    <ClCompile Include="LWIP\core\init.c" />
+    <ClCompile Include="LWIP\core\ipv4\autoip.c" />
+    <ClCompile Include="LWIP\core\ipv4\icmp.c" />
+    <ClCompile Include="LWIP\core\ipv4\igmp.c" />
+    <ClCompile Include="LWIP\core\ipv4\inet.c" />
+    <ClCompile Include="LWIP\core\ipv4\inet_chksum.c" />
+    <ClCompile Include="LWIP\core\ipv4\ip.c" />
+    <ClCompile Include="LWIP\core\ipv4\ip_addr.c" />
+    <ClCompile Include="LWIP\core\ipv4\ip_frag.c" />
+    <ClCompile Include="LWIP\core\mem.c" />
+    <ClCompile Include="LWIP\core\memp.c" />
+    <ClCompile Include="LWIP\core\netif.c" />
+    <ClCompile Include="LWIP\core\pbuf.c" />
+    <ClCompile Include="LWIP\core\raw.c" />
+    <ClCompile Include="LWIP\core\snmp\asn1_dec.c" />
+    <ClCompile Include="LWIP\core\snmp\asn1_enc.c" />
+    <ClCompile Include="LWIP\core\snmp\mib2.c" />
+    <ClCompile Include="LWIP\core\snmp\mib_structs.c" />
+    <ClCompile Include="LWIP\core\snmp\msg_in.c" />
+    <ClCompile Include="LWIP\core\snmp\msg_out.c" />
+    <ClCompile Include="LWIP\core\stats.c" />
+    <ClCompile Include="LWIP\core\sys.c" />
+    <ClCompile Include="LWIP\core\tcp.c" />
+    <ClCompile Include="LWIP\core\tcp_in.c" />
+    <ClCompile Include="LWIP\core\tcp_out.c" />
+    <ClCompile Include="LWIP\core\timers.c" />
+    <ClCompile Include="LWIP\core\udp.c" />
+    <ClCompile Include="LWIP\netif\etharp.c" />
+    <ClCompile Include="LWIP\netif\ethernetif.c" />
+    <ClCompile Include="LWIP\netif\ppp\auth.c" />
+    <ClCompile Include="LWIP\netif\ppp\chap.c" />
+    <ClCompile Include="LWIP\netif\ppp\chpms.c" />
+    <ClCompile Include="LWIP\netif\ppp\fsm.c" />
+    <ClCompile Include="LWIP\netif\ppp\ipcp.c" />
+    <ClCompile Include="LWIP\netif\ppp\lcp.c" />
+    <ClCompile Include="LWIP\netif\ppp\magic.c" />
+    <ClCompile Include="LWIP\netif\ppp\md5.c" />
+    <ClCompile Include="LWIP\netif\ppp\pap.c" />
+    <ClCompile Include="LWIP\netif\ppp\ppp.c" />
+    <ClCompile Include="LWIP\netif\ppp\ppp_oe.c" />
+    <ClCompile Include="LWIP\netif\ppp\randm.c" />
+    <ClCompile Include="LWIP\netif\ppp\vj.c" />
+    <ClCompile Include="LWIP\netif\slipif.c" />
+    <ClCompile Include="LWIP\win32\pcapif.c" />
+    <ClCompile Include="LWIP\win32\pcapif_helper.c" />
+    <ClCompile Include="LWIP\win32\sio.c" />
+    <ClCompile Include="LWIP\win32\sys_arch.c" />
     <ClCompile Include="PORTS\os_cpu_c.c" />
     <ClCompile Include="Source\os_cfg_app.c" />
     <ClCompile Include="Source\os_core.c" />
@@ -62,6 +143,9 @@
     <ClCompile Include="uC-LIB\lib_math.c" />
     <ClCompile Include="uC-LIB\lib_mem.c" />
     <ClCompile Include="uC-LIB\lib_str.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LWIP\netif\FILES" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B7B00B13-EE54-4C64-88FF-F4F43C61C236}</ProjectGuid>
@@ -90,15 +174,18 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;$(IncludePath)</IncludePath>
+    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\LWIP\pcap\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;LWIP_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>wpcap.lib;Packet.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
