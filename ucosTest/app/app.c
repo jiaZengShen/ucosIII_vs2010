@@ -119,6 +119,8 @@ int  main (void)
 */
 #include "ping.h"
 #include "lwip/init.h"
+#include "lwip/tcpip.h"
+#include "os_app_hooks.h"
 static  void  AppTaskStart (void *p_arg)
 {
     OS_ERR  err;
@@ -132,15 +134,17 @@ static  void  AppTaskStart (void *p_arg)
 #if OS_CFG_STAT_TASK_EN > 0u
     OSStatTaskCPUUsageInit(&err);                               /* Compute CPU capacity with no task running            */
 #endif
-
+#if OS_CFG_APP_HOOKS_EN				//使用钩子函数
+	App_OS_SetAllHooks();			
+#endif
     APP_TRACE_DBG(("uCOS-III is Running...\n\r"));
 	//lwip_init();
-	tcpip_init(NULL,NULL);
-	ping_init();
+	//tcpip_init(NULL,NULL);
+	//ping_init();
     while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
-        OSTimeDlyHMSM(0, 0, 1, 0,
-                      OS_OPT_TIME_DLY,
-                      &err);
+		OSTimeDlyHMSM(0, 0, 1, 0,
+			OS_OPT_TIME_DLY,
+			&err);
 
         APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
     }

@@ -20,7 +20,7 @@
     <ClInclude Include="app\os_cfg.h" />
     <ClInclude Include="app\os_cfg_app.h" />
     <ClInclude Include="app\ping.h" />
-    <ClInclude Include="app\util.h" />
+    <ClInclude Include="app\app_util.h" />
     <ClInclude Include="BSP\bsp.h" />
     <ClInclude Include="LWIP\netif\ppp\auth.h" />
     <ClInclude Include="LWIP\netif\ppp\chap.h" />
@@ -52,12 +52,13 @@
     <ClInclude Include="uC-LIB\lib_math.h" />
     <ClInclude Include="uC-LIB\lib_mem.h" />
     <ClInclude Include="uC-LIB\lib_str.h" />
+    <ClInclude Include="unistd.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="app\app.c" />
     <ClCompile Include="app\os_app_hooks.c" />
     <ClCompile Include="app\ping.c" />
-    <ClCompile Include="app\util.c" />
+    <ClCompile Include="app\app_util.c" />
     <ClCompile Include="BSP\bsp.c" />
     <ClCompile Include="BSP\CPU\cpu_bsp.c" />
     <ClCompile Include="LWIP\api\api_lib.c" />
@@ -174,7 +175,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;$(IncludePath)</IncludePath>
+    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;.\;$(IncludePath)</IncludePath>
     <LibraryPath>.\LWIP\pcap\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -182,6 +183,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;LWIP_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

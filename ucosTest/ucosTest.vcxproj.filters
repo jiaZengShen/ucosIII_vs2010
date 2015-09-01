@@ -61,6 +61,9 @@
     <Filter Include="lwip\pcap">
       <UniqueIdentifier>{a17e38d5-43b1-4caf-b25c-57ce86bc9239}</UniqueIdentifier>
     </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{5f68fdab-1881-4d33-a284-a609daed8d8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\os.h">
@@ -183,7 +186,10 @@
     <ClInclude Include="app\ethernetif.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
-    <ClInclude Include="app\util.h">
+    <ClInclude Include="unistd.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="app\app_util.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
   </ItemGroup>
@@ -452,7 +458,7 @@
     <ClCompile Include="app\ping.c">
       <Filter>ucos\app</Filter>
     </ClCompile>
-    <ClCompile Include="app\util.c">
+    <ClCompile Include="app\app_util.c">
       <Filter>ucos\app</Filter>
     </ClCompile>
   </ItemGroup>

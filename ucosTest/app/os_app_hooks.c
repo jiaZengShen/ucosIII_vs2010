@@ -166,10 +166,10 @@ void  App_OS_TaskReturnHook (OS_TCB  *p_tcb)
 * Note(s)    : none
 ************************************************************************************************************************
 */
-
+#include <stdio.h>
 void  App_OS_IdleTaskHook (void)
 {
-
+	//printf("idle");
 }
 
 /*$PAGE*/
