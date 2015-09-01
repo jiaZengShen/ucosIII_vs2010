@@ -54,7 +54,11 @@
 static  OS_TCB   AppTaskStartTCB;
 static  CPU_STK  AppTaskStartStk[APP_TASK_START_STK_SIZE];
 
+static  OS_TCB   ATCB;
+static  CPU_STK  ATaskStartStk[APP_TASK_START_STK_SIZE];
 
+static  OS_TCB   BTCB;
+static  CPU_STK  BTaskStartStk[APP_TASK_START_STK_SIZE];
 /*
 *********************************************************************************************************
 *                                         FUNCTION PROTOTYPES
@@ -117,10 +121,36 @@ int  main (void)
 *                   used.  The compiler should not generate any code for this statement.
 *********************************************************************************************************
 */
-#include "ping.h"
-#include "lwip/init.h"
-#include "lwip/tcpip.h"
 #include "os_app_hooks.h"
+
+void  MyTaskA (void *p_arg)
+{
+	OS_ERR  err;
+	APP_TRACE_DBG(("A is Running...\n\r"));
+	while (DEF_TRUE) {                                            /* Task body, always written as an infinite loop.       */
+		/*OSTimeDlyHMSM(0, 0, 1, 0,
+			OS_OPT_TIME_DLY,
+			&err);*/
+
+		APP_TRACE_DBG(("A: %d\n\r", OSTimeGet(&err)));
+	}
+}
+
+void MyTaskB(void *p_arg)
+{
+	OS_ERR  err;
+	APP_TRACE_DBG(("B is Running...\n\r"));
+	while (DEF_TRUE) {                                            /* Task body, always written as an infinite loop.       */
+		/*OSTimeDlyHMSM(0, 0, 1, 0,
+			OS_OPT_TIME_DLY,
+			&err);*/
+
+		APP_TRACE_DBG(("B: %d\n\r", OSTimeGet(&err)));
+	}
+}
+
+
+
 static  void  AppTaskStart (void *p_arg)
 {
     OS_ERR  err;
@@ -138,6 +168,33 @@ static  void  AppTaskStart (void *p_arg)
 	App_OS_SetAllHooks();			
 #endif
     APP_TRACE_DBG(("uCOS-III is Running...\n\r"));
+	//创建任务
+	OSTaskCreate((OS_TCB     *)&ATCB,                /* Create the start task                                */
+		(CPU_CHAR   *)"A",
+		(OS_TASK_PTR ) MyTaskA,
+		(void       *) 0,
+		(OS_PRIO     ) APP_TASK_START_PRIO+1,
+		(CPU_STK    *)&ATaskStartStk[0],
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
+		(OS_MSG_QTY  ) 0u,
+		(OS_TICK     ) 0u,
+		(void       *) 0,
+		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+		(OS_ERR     *)&err);
+	OSTaskCreate((OS_TCB     *)&BTCB,                /* Create the start task                                */
+		(CPU_CHAR   *)"A",
+		(OS_TASK_PTR ) MyTaskB,
+		(void       *) 0,
+		(OS_PRIO     ) APP_TASK_START_PRIO+1,
+		(CPU_STK    *)&BTaskStartStk[0],
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
+		(OS_MSG_QTY  ) 0u,
+		(OS_TICK     ) 0u,
+		(void       *) 0,
+		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+		(OS_ERR     *)&err);
 	//lwip_init();
 	//tcpip_init(NULL,NULL);
 	//ping_init();
@@ -149,3 +206,6 @@ static  void  AppTaskStart (void *p_arg)
         APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
     }
 }
+
+
+
