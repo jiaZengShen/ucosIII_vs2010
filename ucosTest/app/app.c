@@ -123,16 +123,25 @@ int  main (void)
 */
 #include "os_app_hooks.h"
 
+OS_SEM *p_sem ;//指向信号量
+OS_SEM g_sem ;//实际的信号量
 void  MyTaskA (void *p_arg)
 {
 	OS_ERR  err;
 	APP_TRACE_DBG(("A is Running...\n\r"));
-	while (DEF_TRUE) {                                            /* Task body, always written as an infinite loop.       */
-		/*OSTimeDlyHMSM(0, 0, 1, 0,
+	while (DEF_TRUE) {        
+		//如果把延时去掉，那么就不会实现任务切换了。
+		/* Task body, always written as an infinite loop.       */
+		OSTimeDlyHMSM(0, 0, 1, 0,
 			OS_OPT_TIME_DLY,
-			&err);*/
-
-		APP_TRACE_DBG(("A: %d\n\r", OSTimeGet(&err)));
+			&err);
+		//使用信号量来决定，谁能输出
+		OSSemPend(p_sem,0,OS_OPT_PEND_BLOCKING,NULL,&err);
+		if(err == OS_ERR_NONE)//没有出错
+		{
+			APP_TRACE_DBG(("A: %d\n\r", OSTimeGet(&err)));
+		}
+		OSSemPost(p_sem,OS_OPT_POST_ALL,&err);
 	}
 }
 
@@ -141,13 +150,19 @@ void MyTaskB(void *p_arg)
 	OS_ERR  err;
 	APP_TRACE_DBG(("B is Running...\n\r"));
 	while (DEF_TRUE) {                                            /* Task body, always written as an infinite loop.       */
-		/*OSTimeDlyHMSM(0, 0, 1, 0,
+		OSTimeDlyHMSM(0, 0, 1, 0,
 			OS_OPT_TIME_DLY,
-			&err);*/
-
-		APP_TRACE_DBG(("B: %d\n\r", OSTimeGet(&err)));
+			&err);
+		//使用信号量来决定，谁能输出
+		OSSemPend(p_sem,0,OS_OPT_PEND_BLOCKING,NULL,&err);
+		if(err == OS_ERR_NONE)//没有出错
+		{
+			APP_TRACE_DBG(("B: %d\n\r", OSTimeGet(&err)));
+		}
+		OSSemPost(p_sem,OS_OPT_POST_ALL,&err);
 	}
 }
+
 
 
 
@@ -168,6 +183,13 @@ static  void  AppTaskStart (void *p_arg)
 	App_OS_SetAllHooks();			
 #endif
     APP_TRACE_DBG(("uCOS-III is Running...\n\r"));
+	OS_CRITICAL_ENTER();	//进入临界区
+	p_sem = &g_sem;
+	//创建信号量
+	OSSemCreate(p_sem,
+		"sem_name",
+		1,
+		&err);
 	//创建任务
 	OSTaskCreate((OS_TCB     *)&ATCB,                /* Create the start task                                */
 		(CPU_CHAR   *)"A",
@@ -195,16 +217,20 @@ static  void  AppTaskStart (void *p_arg)
 		(void       *) 0,
 		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
 		(OS_ERR     *)&err);
+	OS_CRITICAL_EXIT();	//退出临界区
+
+	OSTaskDel((OS_TCB*)0,&err);	//删除start_task任务自身
+
 	//lwip_init();
 	//tcpip_init(NULL,NULL);
 	//ping_init();
-    while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
-		OSTimeDlyHMSM(0, 0, 1, 0,
-			OS_OPT_TIME_DLY,
-			&err);
+  //  while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
+		//OSTimeDlyHMSM(0, 0, 1, 0,
+		//	OS_OPT_TIME_DLY,
+		//	&err);
 
-        APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
-    }
+  //      APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
+  //  }
 }
 
 
