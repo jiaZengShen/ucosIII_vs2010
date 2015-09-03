@@ -192,6 +192,9 @@
     <ClInclude Include="app\app_util.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
+    <ClInclude Include="lwipTest.h">
+      <Filter>ucos\app</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\os_cfg_app.c">
@@ -459,6 +462,9 @@
       <Filter>ucos\app</Filter>
     </ClCompile>
     <ClCompile Include="app\app_util.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="lwipTest.c">
       <Filter>ucos\app</Filter>
     </ClCompile>
   </ItemGroup>

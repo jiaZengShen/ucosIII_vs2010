@@ -22,6 +22,7 @@
     <ClInclude Include="app\ping.h" />
     <ClInclude Include="app\app_util.h" />
     <ClInclude Include="BSP\bsp.h" />
+    <ClInclude Include="lwipTest.h" />
     <ClInclude Include="LWIP\netif\ppp\auth.h" />
     <ClInclude Include="LWIP\netif\ppp\chap.h" />
     <ClInclude Include="LWIP\netif\ppp\chpms.h" />
@@ -61,6 +62,7 @@
     <ClCompile Include="app\app_util.c" />
     <ClCompile Include="BSP\bsp.c" />
     <ClCompile Include="BSP\CPU\cpu_bsp.c" />
+    <ClCompile Include="lwipTest.c" />
     <ClCompile Include="LWIP\api\api_lib.c" />
     <ClCompile Include="LWIP\api\api_msg.c" />
     <ClCompile Include="LWIP\api\err.c" />

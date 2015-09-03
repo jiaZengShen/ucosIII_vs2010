@@ -164,7 +164,7 @@ void MyTaskB(void *p_arg)
 }
 
 
-
+#include "lwipTest.h"
 
 static  void  AppTaskStart (void *p_arg)
 {
@@ -185,12 +185,15 @@ static  void  AppTaskStart (void *p_arg)
     APP_TRACE_DBG(("uCOS-III is Running...\n\r"));
 	OS_CRITICAL_ENTER();	//进入临界区
 	p_sem = &g_sem;
+	//初始化一些参数
+	tcpip_init(NULL,NULL);
 	//创建信号量
 	OSSemCreate(p_sem,
 		"sem_name",
 		1,
 		&err);
 	//创建任务
+	//A
 	OSTaskCreate((OS_TCB     *)&ATCB,                /* Create the start task                                */
 		(CPU_CHAR   *)"A",
 		(OS_TASK_PTR ) MyTaskA,
@@ -204,12 +207,27 @@ static  void  AppTaskStart (void *p_arg)
 		(void       *) 0,
 		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
 		(OS_ERR     *)&err);
+	//B
 	OSTaskCreate((OS_TCB     *)&BTCB,                /* Create the start task                                */
 		(CPU_CHAR   *)"A",
 		(OS_TASK_PTR ) MyTaskB,
 		(void       *) 0,
-		(OS_PRIO     ) APP_TASK_START_PRIO+1,
+		(OS_PRIO     ) APP_TASK_START_PRIO+2,//优先级必须相互区分
 		(CPU_STK    *)&BTaskStartStk[0],
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
+		(OS_MSG_QTY  ) 0u,
+		(OS_TICK     ) 0u,
+		(void       *) 0,
+		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+		(OS_ERR     *)&err);
+	//创建ping的test
+	OSTaskCreate((OS_TCB     *)&pingTCB,                /* Create the start task                                */
+		(CPU_CHAR   *)"ping",
+		(OS_TASK_PTR ) pingTestTask,
+		(void       *) 0,
+		(OS_PRIO     ) APP_TASK_START_PRIO+3,
+		(CPU_STK    *)&ATaskStartStk[0],
 		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
 		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
 		(OS_MSG_QTY  ) 0u,
@@ -219,18 +237,18 @@ static  void  AppTaskStart (void *p_arg)
 		(OS_ERR     *)&err);
 	OS_CRITICAL_EXIT();	//退出临界区
 
-	OSTaskDel((OS_TCB*)0,&err);	//删除start_task任务自身
+	//OSTaskDel((OS_TCB*)0,&err);	//删除start_task任务自身
 
 	//lwip_init();
-	//tcpip_init(NULL,NULL);
+	
 	//ping_init();
-  //  while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
-		//OSTimeDlyHMSM(0, 0, 1, 0,
-		//	OS_OPT_TIME_DLY,
-		//	&err);
+    while (DEF_ON) {                                            /* Task body, always written as an infinite loop.       */
+		OSTimeDlyHMSM(0, 0, 1, 0,
+			OS_OPT_TIME_DLY,
+			&err);
 
-  //      APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
-  //  }
+        APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
+    }
 }
 
 
