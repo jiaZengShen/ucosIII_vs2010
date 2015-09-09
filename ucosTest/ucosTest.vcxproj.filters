@@ -183,16 +183,13 @@
     <ClInclude Include="app\ping.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
-    <ClInclude Include="app\ethernetif.h">
-      <Filter>ucos\app</Filter>
-    </ClInclude>
     <ClInclude Include="unistd.h">
       <Filter>public</Filter>
     </ClInclude>
     <ClInclude Include="app\app_util.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
-    <ClInclude Include="lwipTest.h">
+    <ClInclude Include="echo.h">
       <Filter>ucos\app</Filter>
     </ClInclude>
   </ItemGroup>
@@ -464,7 +461,10 @@
     <ClCompile Include="app\app_util.c">
       <Filter>ucos\app</Filter>
     </ClCompile>
-    <ClCompile Include="lwipTest.c">
+    <ClCompile Include="lwipTest3.c">
+      <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="echo.c">
       <Filter>ucos\app</Filter>
     </ClCompile>
   </ItemGroup>

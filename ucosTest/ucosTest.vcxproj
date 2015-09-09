@@ -13,7 +13,6 @@
   <ItemGroup>
     <ClInclude Include="app\app_cfg.h" />
     <ClInclude Include="app\cpu_cfg.h" />
-    <ClInclude Include="app\ethernetif.h" />
     <ClInclude Include="app\includes.h" />
     <ClInclude Include="app\lib_cfg.h" />
     <ClInclude Include="app\os_app_hooks.h" />
@@ -22,7 +21,7 @@
     <ClInclude Include="app\ping.h" />
     <ClInclude Include="app\app_util.h" />
     <ClInclude Include="BSP\bsp.h" />
-    <ClInclude Include="lwipTest.h" />
+    <ClInclude Include="echo.h" />
     <ClInclude Include="LWIP\netif\ppp\auth.h" />
     <ClInclude Include="LWIP\netif\ppp\chap.h" />
     <ClInclude Include="LWIP\netif\ppp\chpms.h" />
@@ -62,7 +61,8 @@
     <ClCompile Include="app\app_util.c" />
     <ClCompile Include="BSP\bsp.c" />
     <ClCompile Include="BSP\CPU\cpu_bsp.c" />
-    <ClCompile Include="lwipTest.c" />
+    <ClCompile Include="echo.c" />
+    <ClCompile Include="lwipTest3.c" />
     <ClCompile Include="LWIP\api\api_lib.c" />
     <ClCompile Include="LWIP\api\api_msg.c" />
     <ClCompile Include="LWIP\api\err.c" />
@@ -177,7 +177,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;.\;$(IncludePath)</IncludePath>
+    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;.\;F:\test\ucosTest\ucosTest\LWIP\win32;$(IncludePath)</IncludePath>
     <LibraryPath>.\LWIP\pcap\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

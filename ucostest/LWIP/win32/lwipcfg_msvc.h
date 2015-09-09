@@ -8,7 +8,7 @@
 #define PPP_PASSWORD  "pass"
 
 /** Define this to the index of the windows network adapter to use */
-#define PACKET_LIB_ADAPTER_NR         1
+#define PACKET_LIB_ADAPTER_NR         0
 /** Define this to the GUID of the windows network adapter to use
  * or NOT define this if you want PACKET_LIB_ADAPTER_NR to be used */ 
 /*#define PACKET_LIB_ADAPTER_GUID       "00000000-0000-0000-0000-000000000000"*/
@@ -58,7 +58,7 @@
 #define LWIP_SHELL_APP                0
 #define LWIP_SNTP_APP                 0
 #define LWIP_SOCKET_EXAMPLES_APP      0
-#define LWIP_TCPECHO_APP              0
+#define LWIP_TCPECHO_APP              1
 /* Set this to 1 to use the netconn tcpecho server,
  * otherwise the raw api server will be used. */
 /*#define LWIP_TCPECHO_APP_NETCONN   */
