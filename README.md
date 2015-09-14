@@ -1,3 +1,5 @@
 ﻿可以直接在vs2010上运行的ucosiii,
 添加了LWIP网络协议栈。       
-告诉大家一个好消息，我即将完成lwip在windows上的运行实例。
+2015.9.14完成lwip的一个tcp的server和rawudp的测试例子
+2015.9.14,完成lwip在windows上的移植
+2015,8.30告诉大家一个好消息，我即将完成lwip在windows上的运行实例。
