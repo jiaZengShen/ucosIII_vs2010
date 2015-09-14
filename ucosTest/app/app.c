@@ -81,7 +81,7 @@
 //*********************************************************************************************************
 //*/
 //
-//int  ___main (void)
+//int  main (void)
 //{
 //    OS_ERR  err;
 //
@@ -165,7 +165,7 @@
 //}
 //
 //
-//#include "lwipTest.h"
+//
 //
 //static  void  AppTaskStart (void *p_arg)
 //{
@@ -237,19 +237,19 @@
 //	//	(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
 //	//	(OS_ERR     *)&err);
 //	//client测试程序
-//	OSTaskCreate((OS_TCB     *)&clientTCB,                /* Create the start task                                */
-//		(CPU_CHAR   *)"client",
-//		(OS_TASK_PTR ) clientTestTask,
-//		(void       *) 0,
-//		(OS_PRIO     ) APP_TASK_START_PRIO+4,
-//		(CPU_STK    *)&clientTaskStartStk[0],
-//		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
-//		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
-//		(OS_MSG_QTY  ) 0u,
-//		(OS_TICK     ) 0u,
-//		(void       *) 0,
-//		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
-//		(OS_ERR     *)&err);
+//	//OSTaskCreate((OS_TCB     *)&clientTCB,                /* Create the start task                                */
+//	//	(CPU_CHAR   *)"client",
+//	//	(OS_TASK_PTR ) clientTestTask,
+//	//	(void       *) 0,
+//	//	(OS_PRIO     ) APP_TASK_START_PRIO+4,
+//	//	(CPU_STK    *)&clientTaskStartStk[0],
+//	//	(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
+//	//	(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
+//	//	(OS_MSG_QTY  ) 0u,
+//	//	(OS_TICK     ) 0u,
+//	//	(void       *) 0,
+//	//	(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+//	//	(OS_ERR     *)&err);
 //	OS_CRITICAL_EXIT();	//退出临界区
 //
 //	//OSTaskDel((OS_TCB*)0,&err);	//删除start_task任务自身

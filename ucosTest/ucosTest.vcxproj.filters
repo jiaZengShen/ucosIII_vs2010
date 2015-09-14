@@ -64,6 +64,12 @@
     <Filter Include="public">
       <UniqueIdentifier>{5f68fdab-1881-4d33-a284-a609daed8d8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ucos\app\MyLwipApp">
+      <UniqueIdentifier>{a9dfeb39-2a12-45a9-a163-b234c7ce227a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\app\MyLwipApp\udpRaw">
+      <UniqueIdentifier>{a314d1b7-4e38-4b83-a5ef-7ed5636327e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\os.h">
@@ -191,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="echo.h">
       <Filter>ucos\app</Filter>
+    </ClInclude>
+    <ClInclude Include="udpRawTest.h">
+      <Filter>ucos\app\MyLwipApp\udpRaw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -466,6 +475,12 @@
     </ClCompile>
     <ClCompile Include="echo.c">
       <Filter>ucos\app</Filter>
+    </ClCompile>
+    <ClCompile Include="my_tcp_server.c">
+      <Filter>ucos\app\MyLwipApp</Filter>
+    </ClCompile>
+    <ClCompile Include="udpRawTest.c">
+      <Filter>ucos\app\MyLwipApp\udpRaw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

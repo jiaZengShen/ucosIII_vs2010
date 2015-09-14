@@ -70,7 +70,7 @@ extern "C" {
 
 
 #ifndef LWIP_UNUSED_ARG
-#define LWIP_UNUSED_ARG(x) (void)x
+#define LWIP_UNUSED_ARG(x) (void)x	//去掉警用用的，其实没有啥用
 #endif /* LWIP_UNUSED_ARG */ 
 
 

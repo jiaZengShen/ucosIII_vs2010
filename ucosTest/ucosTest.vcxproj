@@ -52,6 +52,7 @@
     <ClInclude Include="uC-LIB\lib_math.h" />
     <ClInclude Include="uC-LIB\lib_mem.h" />
     <ClInclude Include="uC-LIB\lib_str.h" />
+    <ClInclude Include="udpRawTest.h" />
     <ClInclude Include="unistd.h" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +122,7 @@
     <ClCompile Include="LWIP\win32\pcapif_helper.c" />
     <ClCompile Include="LWIP\win32\sio.c" />
     <ClCompile Include="LWIP\win32\sys_arch.c" />
+    <ClCompile Include="my_tcp_server.c" />
     <ClCompile Include="PORTS\os_cpu_c.c" />
     <ClCompile Include="Source\os_cfg_app.c" />
     <ClCompile Include="Source\os_core.c" />
@@ -146,6 +148,7 @@
     <ClCompile Include="uC-LIB\lib_math.c" />
     <ClCompile Include="uC-LIB\lib_mem.c" />
     <ClCompile Include="uC-LIB\lib_str.c" />
+    <ClCompile Include="udpRawTest.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LWIP\netif\FILES" />

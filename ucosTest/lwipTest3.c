@@ -132,8 +132,7 @@ void link_callback(struct netif *netif)
 
 
 /* This function initializes all network interfaces */
-static void
-	msvc_netif_init()
+static void	msvc_netif_init()
 {
 	ip_addr_t ipaddr, netmask, gw;
 
@@ -147,11 +146,11 @@ static void
 	ip_addr_set_zero(&netmask);
 
 
-	LWIP_PORT_INIT_GW(&gw);
-	LWIP_PORT_INIT_IPADDR(&ipaddr);
-	LWIP_PORT_INIT_NETMASK(&netmask);
+	LWIP_PORT_INIT_GW(&gw);//设置网关
+	LWIP_PORT_INIT_IPADDR(&ipaddr);//设置ip地址
+	LWIP_PORT_INIT_NETMASK(&netmask);//设置掩码
 	printf("Starting lwIP, local interface IP is %s\n", ip_ntoa(&ipaddr));
-
+	printf("the 网关是%s\n",ip_ntoa(&gw) );
 
 
 
@@ -162,27 +161,23 @@ static void
 
 
 	netif_set_link_callback(&netif, link_callback);
-
-
-
 	netif_set_up(&netif);
-
-
-
-
-
-
-
 }
 
 
 
 
-
+void my_tcp_server_init(void);
+#include "udpRawTest.h"
 /* This function initializes applications */
 static void	apps_init()
 {
-	echo_init();
+	//echo_init();
+	//tcp
+	//my_tcp_server_init();
+	
+	//udp raw接口测试
+	udpRawTestInit();	
 }
 
 
