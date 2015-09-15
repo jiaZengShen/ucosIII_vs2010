@@ -142,6 +142,7 @@
     <ClCompile Include="Source\os_time.c" />
     <ClCompile Include="Source\os_tmr.c" />
     <ClCompile Include="Source\os_var.c" />
+    <ClCompile Include="tcpRaw.c" />
     <ClCompile Include="uC-CPU\cpu_c.c" />
     <ClCompile Include="uC-CPU\cpu_core.c" />
     <ClCompile Include="uC-LIB\lib_ascii.c" />

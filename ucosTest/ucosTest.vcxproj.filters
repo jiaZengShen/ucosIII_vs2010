@@ -70,6 +70,9 @@
     <Filter Include="ucos\app\MyLwipApp\udpRaw">
       <UniqueIdentifier>{a314d1b7-4e38-4b83-a5ef-7ed5636327e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ucos\app\MyLwipApp\tcpRawTest">
+      <UniqueIdentifier>{d22ab4a5-f2e4-4bf8-9ac0-d0e54fa3a800}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\os.h">
@@ -481,6 +484,9 @@
     </ClCompile>
     <ClCompile Include="udpRawTest.c">
       <Filter>ucos\app\MyLwipApp\udpRaw</Filter>
+    </ClCompile>
+    <ClCompile Include="tcpRaw.c">
+      <Filter>ucos\app\MyLwipApp\tcpRawTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
