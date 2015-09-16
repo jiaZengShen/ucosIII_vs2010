@@ -149,6 +149,7 @@
     <ClCompile Include="uC-LIB\lib_math.c" />
     <ClCompile Include="uC-LIB\lib_mem.c" />
     <ClCompile Include="uC-LIB\lib_str.c" />
+    <ClCompile Include="udpNetcomm.c" />
     <ClCompile Include="udpRawTest.c" />
   </ItemGroup>
   <ItemGroup>

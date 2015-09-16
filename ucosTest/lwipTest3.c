@@ -138,7 +138,7 @@ static void	msvc_netif_init()
 
 
 
-
+	
 
 
 	ip_addr_set_zero(&gw);
@@ -169,6 +169,7 @@ static void	msvc_netif_init()
 
 void my_tcp_server_init(void);
 void tcp_raw_init() ;
+void  udpNetCommInit();
 #include "udpRawTest.h"
 /* This function initializes applications */
 static void	apps_init()
@@ -179,7 +180,10 @@ static void	apps_init()
 	
 	//udp raw½Ó¿Ú²âÊÔ
 	//udpRawTestInit();	
-	tcp_raw_init();
+	
+	//tcp_raw_init();
+
+	udpNetCommInit();
 }
 
 

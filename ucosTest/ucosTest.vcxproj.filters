@@ -488,6 +488,9 @@
     <ClCompile Include="tcpRaw.c">
       <Filter>ucos\app\MyLwipApp\tcpRawTest</Filter>
     </ClCompile>
+    <ClCompile Include="udpNetcomm.c">
+      <Filter>ucos\app\MyLwipApp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="LWIP\netif\FILES">
