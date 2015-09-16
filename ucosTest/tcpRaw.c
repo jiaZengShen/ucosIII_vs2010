@@ -10,7 +10,8 @@ char tcp_client_recvbuf[512];
 void tcp_client_connection_close(struct tcp_pcb *tpcb)
 {
 	//移除回调
-	tcp_abort(tpcb);//终止连接,删除pcb控制块
+	tcp_close(tpcb);
+	//tcp_abort(tpcb);//强制终止连接,会产生tcp错误
 	tcp_arg(tpcb,NULL);  
 	tcp_recv(tpcb,NULL);
 	tcp_sent(tpcb,NULL);
@@ -60,6 +61,7 @@ err_t tcp_client_recv(void *arg,struct tcp_pcb *tpcb,struct pbuf *p,err_t err)
 			printf(tcp_client_recvbuf);//打印出接受的数据
 		}
 	}
+	//tcp_client_connection_close(tpcb);//关闭连接
 	return ret_err;
 }
 //lwIP tcp_err函数的回调函数
@@ -71,7 +73,7 @@ void tcp_client_error(void *arg,err_t err)
 	printf(buffer);
 } 
 //此函数用来发送数据
-#define SEND_LEN  455
+#define SEND_LEN  22  //必须小于TCP_SND_BUF ，否则会出错的，解决办法，暂时没有
 char sendBuffer[SEND_LEN];
 void tcp_client_senddata(struct tcp_pcb *tpcb)
 {
@@ -89,8 +91,11 @@ void tcp_client_senddata(struct tcp_pcb *tpcb)
 	len = tcp_sndbuf(tpcb)<SEND_LEN?tcp_sndbuf(tpcb):SEND_LEN;
 	while(index<SEND_LEN)
 	{
-		wr_err=tcp_write(tpcb,sendBuffer+index,len,TCP_WRITE_FLAG_COPY); //将要发送的数据加入到发送缓冲队列中
-		tcp_output(tpcb);		//将发送缓冲队列中的数据立即发送出去
+		if(len>0)
+		{
+			wr_err=tcp_write(tpcb,sendBuffer+index,len,TCP_WRITE_FLAG_COPY); //将要发送的数据加入到发送缓冲队列中
+			wr_err= tcp_output(tpcb);		//将发送缓冲队列中的数据立即发送出去
+		}
 		//pbuf_free()
 		index = index + len ;
 		last = SEND_LEN-index;
@@ -106,7 +111,6 @@ err_t tcp_client_sent(void *arg, struct tcp_pcb *tpcb, u16_t len)
 	//LWIP_UNUSED_ARG(len);
 	//es=(struct tcp_client_struct*)arg;
 	//if(es->p)tcp_client_senddata(tpcb,es);//发送数据
-	tcp_client_connection_close(tpcb);//关闭连接
 	return ERR_OK;
 }
 
@@ -138,7 +142,8 @@ void tcp_raw_init()
 	if(tcpPcb)
 	{
 		//设置远程服务器地址
-		IP4_ADDR(&rm_ip_addr,192,168,1,100);
-		tcp_connect(tcpPcb,&rm_ip_addr,1000,tcp_client_connected);
+		//IP4_ADDR(&rm_ip_addr,192,168,1,100);
+		IP4_ADDR(&rm_ip_addr,192,168,10,120);//设置服务器的ip地址
+		tcp_connect(tcpPcb,&rm_ip_addr,8080,tcp_client_connected);
 	}
 }
