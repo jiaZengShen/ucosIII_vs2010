@@ -491,6 +491,9 @@
     <ClCompile Include="udpNetcomm.c">
       <Filter>ucos\app\MyLwipApp</Filter>
     </ClCompile>
+    <ClCompile Include="tcpNetConnTest.c">
+      <Filter>ucos\app\MyLwipApp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="LWIP\netif\FILES">

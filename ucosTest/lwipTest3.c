@@ -170,6 +170,7 @@ static void	msvc_netif_init()
 void my_tcp_server_init(void);
 void tcp_raw_init() ;
 void  udpNetCommInit();
+void tcpNetConnTest();
 #include "udpRawTest.h"
 /* This function initializes applications */
 static void	apps_init()
@@ -183,7 +184,8 @@ static void	apps_init()
 	
 	//tcp_raw_init();
 
-	udpNetCommInit();
+	//udpNetCommInit();
+	tcpNetConnTest();
 }
 
 
