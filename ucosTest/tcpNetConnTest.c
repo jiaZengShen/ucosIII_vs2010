@@ -66,6 +66,7 @@ void tcpNetThread(void *arg)
 							if(dataLen>509)
 								break;
 						}
+						dataLen = 0;
 						printf(recvBuffer);
 						netbuf_delete(recvBuf);
 					}
