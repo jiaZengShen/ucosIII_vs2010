@@ -1,87 +1,87 @@
 
-///*
-//*********************************************************************************************************
-//*                                            EXAMPLE CODE
-//*
-//*                          (c) Copyright 2009-2011; Micrium, Inc.; Weston, FL
-//*
-//*               All rights reserved.  Protected by international copyright laws.
-//*
-//*               Please feel free to use any application code labeled as 'EXAMPLE CODE' in
-//*               your application products.  Example code may be used as is, in whole or in
-//*               part, or may be used as a reference only.
-//*
-//*               Please help us continue to provide the Embedded community with the finest
-//*               software available.  Your honesty is greatly appreciated.
-//*
-//*               You can contact us at www.micrium.com.
-//*********************************************************************************************************
-//*/
-//
-///*
-//*********************************************************************************************************
-//*
-//*                                          APPLICATION CODE
-//*
-//*                                          Microsoft Windows
-//*
-//* Filename      : app.c
-//* Version       : V1.00
-//* Programmer(s) : JJL
-//*                 FGK
-//*********************************************************************************************************
-//*/
-//
-///*
-//*********************************************************************************************************
-//*                                             INCLUDE FILES
-//*********************************************************************************************************
-//*/
-//
-//#include <includes.h>
-//
-//
-///*
-//*********************************************************************************************************
-//*                                             LOCAL DEFINES
-//*********************************************************************************************************
-//*/
-//
-///*
-//*********************************************************************************************************
-//*                                            LOCAL VARIABLES
-//*********************************************************************************************************
-//*/
-//static  OS_TCB   AppTaskStartTCB;
-//static  CPU_STK  AppTaskStartStk[APP_TASK_START_STK_SIZE];
-//
-//static  OS_TCB   ATCB;
-//static  CPU_STK  ATaskStartStk[APP_TASK_START_STK_SIZE];
-//
-//static  OS_TCB   BTCB;
-//static  CPU_STK  BTaskStartStk[APP_TASK_START_STK_SIZE];
-///*
-//*********************************************************************************************************
-//*                                         FUNCTION PROTOTYPES
-//*********************************************************************************************************
-//*/
-//
-//static  void  AppTaskStart(void  *p_arg);
-//
-//
-///*
-//*********************************************************************************************************
-//*                                                main()
-//*
-//* Description : This is the standard entry point for C code.  It is assumed that your code will call
-//*               main() once you have performed all necessary initialization.
-//*
-//* Argument(s) : none.
-//*
-//* Return(s)   : none.
-//*********************************************************************************************************
-//*/
-//
+/*
+*********************************************************************************************************
+*                                            EXAMPLE CODE
+*
+*                          (c) Copyright 2009-2011; Micrium, Inc.; Weston, FL
+*
+*               All rights reserved.  Protected by international copyright laws.
+*
+*               Please feel free to use any application code labeled as 'EXAMPLE CODE' in
+*               your application products.  Example code may be used as is, in whole or in
+*               part, or may be used as a reference only.
+*
+*               Please help us continue to provide the Embedded community with the finest
+*               software available.  Your honesty is greatly appreciated.
+*
+*               You can contact us at www.micrium.com.
+*********************************************************************************************************
+*/
+
+/*
+*********************************************************************************************************
+*
+*                                          APPLICATION CODE
+*
+*                                          Microsoft Windows
+*
+* Filename      : app.c
+* Version       : V1.00
+* Programmer(s) : JJL
+*                 FGK
+*********************************************************************************************************
+*/
+
+/*
+*********************************************************************************************************
+*                                             INCLUDE FILES
+*********************************************************************************************************
+*/
+
+#include <includes.h>
+
+
+/*
+*********************************************************************************************************
+*                                             LOCAL DEFINES
+*********************************************************************************************************
+*/
+
+/*
+*********************************************************************************************************
+*                                            LOCAL VARIABLES
+*********************************************************************************************************
+*/
+static  OS_TCB   AppTaskStartTCB;
+static  CPU_STK  AppTaskStartStk[APP_TASK_START_STK_SIZE];
+
+static  OS_TCB   ATCB;
+static  CPU_STK  ATaskStartStk[APP_TASK_START_STK_SIZE];
+
+static  OS_TCB   BTCB;
+static  CPU_STK  BTaskStartStk[APP_TASK_START_STK_SIZE];
+/*
+*********************************************************************************************************
+*                                         FUNCTION PROTOTYPES
+*********************************************************************************************************
+*/
+
+static  void  AppTaskStart(void  *p_arg);
+
+
+/*
+*********************************************************************************************************
+*                                                main()
+*
+* Description : This is the standard entry point for C code.  It is assumed that your code will call
+*               main() once you have performed all necessary initialization.
+*
+* Argument(s) : none.
+*
+* Return(s)   : none.
+*********************************************************************************************************
+*/
+
 //int  main (void)
 //{
 //    OS_ERR  err;
@@ -106,23 +106,23 @@
 //    OSStart(&err);                                              /* Start multitasking (i.e. give control to uC/OS-III). */
 //	return 0 ;
 //}
-//
-//
-///*
-//*********************************************************************************************************
-//*                                          STARTUP TASK
-//*
-//* Description : This is an example of a startup task.  As mentioned in the book's text, you MUST
-//*               initialize the ticker only once multitasking has started.
-//*
-//* Argument(s) : p_arg       is the argument passed to 'AppTaskStart()' by 'OSTaskCreate()'.
-//*
-//* Return(s)   : none.
-//*
-//* Note(s)     : (1) The first line of code is used to prevent a compiler warning because 'p_arg' is not
-//*                   used.  The compiler should not generate any code for this statement.
-//*********************************************************************************************************
-//*/
+
+
+/*
+*********************************************************************************************************
+*                                          STARTUP TASK
+*
+* Description : This is an example of a startup task.  As mentioned in the book's text, you MUST
+*               initialize the ticker only once multitasking has started.
+*
+* Argument(s) : p_arg       is the argument passed to 'AppTaskStart()' by 'OSTaskCreate()'.
+*
+* Return(s)   : none.
+*
+* Note(s)     : (1) The first line of code is used to prevent a compiler warning because 'p_arg' is not
+*                   used.  The compiler should not generate any code for this statement.
+*********************************************************************************************************
+*/
 //#include "os_app_hooks.h"
 //
 //OS_SEM *p_sem ;//指向信号量
@@ -266,6 +266,6 @@
 //        APP_TRACE_DBG(("Time: %d\n\r", OSTimeGet(&err)));
 //    }
 //}
-//
-//
-//
+
+
+

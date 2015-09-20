@@ -172,7 +172,10 @@ void tcp_raw_init() ;
 void  udpNetCommInit();
 void tcpNetConnTest();
 void tcpNetconnServerTestInit();
+void socketSelectInit();
+void socketClientInit();
 #include "udpRawTest.h"
+#include "socket_examples.h"
 /* This function initializes applications */
 static void	apps_init()
 {
@@ -187,7 +190,12 @@ static void	apps_init()
 
 	//udpNetCommInit();
 	//tcpNetConnTest();
-	tcpNetconnServerTestInit();
+	//tcpNetconnServerTestInit();
+	
+
+	//socket_examples_init();
+	socketSelectInit();
+	//socketClientInit();
 }
 
 

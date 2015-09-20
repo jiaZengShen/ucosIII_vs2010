@@ -41,6 +41,7 @@
     <ClInclude Include="LWIP\win32\pcapif.h" />
     <ClInclude Include="LWIP\win32\pcapif_helper.h" />
     <ClInclude Include="PORTS\os_cpu.h" />
+    <ClInclude Include="socket_examples.h" />
     <ClInclude Include="Source\os.h" />
     <ClInclude Include="Source\os_type.h" />
     <ClInclude Include="uC-CPU\cpu.h" />
@@ -124,6 +125,9 @@
     <ClCompile Include="LWIP\win32\sys_arch.c" />
     <ClCompile Include="my_tcp_server.c" />
     <ClCompile Include="PORTS\os_cpu_c.c" />
+    <ClCompile Include="socketClientTest.c" />
+    <ClCompile Include="socketSelectTest.c" />
+    <ClCompile Include="socket_examples.c" />
     <ClCompile Include="Source\os_cfg_app.c" />
     <ClCompile Include="Source\os_core.c" />
     <ClCompile Include="Source\os_dbg.c" />

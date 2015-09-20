@@ -73,6 +73,12 @@
     <Filter Include="ucos\app\MyLwipApp\tcpRawTest">
       <UniqueIdentifier>{d22ab4a5-f2e4-4bf8-9ac0-d0e54fa3a800}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ucos\app\MyLwipApp\官方例子">
+      <UniqueIdentifier>{c7e92aa6-531f-4238-ac43-971069e10864}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ucos\app\MyLwipApp\socket">
+      <UniqueIdentifier>{886e1ebf-0b61-4ba4-9c44-9047a2babb12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\os.h">
@@ -203,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="udpRawTest.h">
       <Filter>ucos\app\MyLwipApp\udpRaw</Filter>
+    </ClInclude>
+    <ClInclude Include="socket_examples.h">
+      <Filter>ucos\app\MyLwipApp\官方例子</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -496,6 +505,15 @@
     </ClCompile>
     <ClCompile Include="tcpNetconnServerTest.c">
       <Filter>ucos\app\MyLwipApp</Filter>
+    </ClCompile>
+    <ClCompile Include="socket_examples.c">
+      <Filter>ucos\app\MyLwipApp\官方例子</Filter>
+    </ClCompile>
+    <ClCompile Include="socketSelectTest.c">
+      <Filter>ucos\app\MyLwipApp\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="socketClientTest.c">
+      <Filter>ucos\app\MyLwipApp\socket</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
