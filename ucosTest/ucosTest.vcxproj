@@ -188,7 +188,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;.\;F:\test\ucosTest\ucosTest\LWIP\win32;$(IncludePath)</IncludePath>
+    <IncludePath>.\Source;.\Cfg;.\uC-CPU;.\app;.\uC-LIB;.\PORTS;.\BSP;.\LWIP\include;.\LWIP\include\ipv4;.\LWIP\pcap\Include;.\;.\LWIP\win32;$(IncludePath)</IncludePath>
     <LibraryPath>.\LWIP\pcap\Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
