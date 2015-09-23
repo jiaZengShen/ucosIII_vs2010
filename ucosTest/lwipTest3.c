@@ -203,7 +203,7 @@ myTcp_init(void * arg)
   msvc_netif_init();
 
   /* init apps */
-  apps_init();
+  //apps_init();
 
   sys_sem_signal(init_sem);
 
@@ -373,6 +373,7 @@ void osInit()
 	                (void       *) 0,
 	                (OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
 	                (OS_ERR     *)&err);
+	apps_init();
 }
 
 /* This is somewhat different to other ports: we have a main loop here:

@@ -1,6 +1,7 @@
 #include "LWIP/api.h"
 #include "LWIP/sockets.h"
 #include <string.h>
+#include "includes.h"
 //typedef int SOCKET ;
 //typedef struct sockaddr_in SOCKADDR_IN;
 #define SOCKET_ERROR -1  //socket出现错误
@@ -123,10 +124,39 @@ void socketSelectThread(void *arg)
 				}
 			}
 		}
+		OSTimeDlyHMSM(0, 0, 0, 1,
+			OS_OPT_TIME_DLY,
+			&err);
 	}
 }
+//windows 的线程
+//void socketSelectInit()
+//{
+//	sys_thread_new("udpThread", socketSelectThread, NULL, DEFAULT_THREAD_STACKSIZE, DEFAULT_THREAD_PRIO);
+//}
+
+
+static  OS_TCB   appTCB;
+static  CPU_STK  appStk[APP_TASK_START_STK_SIZE];
+
 
 void socketSelectInit()
 {
-	sys_thread_new("udpThread", socketSelectThread, NULL, DEFAULT_THREAD_STACKSIZE, DEFAULT_THREAD_PRIO);
+	//sys_thread_new("udpThread", socketSelectThread, NULL, DEFAULT_THREAD_STACKSIZE, DEFAULT_THREAD_PRIO);
+
+	OS_ERR err ;
+
+	OSTaskCreate((OS_TCB     *)&appTCB,                /* Create the start task                                */
+		(CPU_CHAR   *)"slect",
+		(OS_TASK_PTR ) socketSelectThread,
+		(void       *) 0,
+		(OS_PRIO     ) APP_TASK_START_PRIO,
+		(CPU_STK    *)&appStk[0],
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE / 10u,
+		(CPU_STK_SIZE) APP_TASK_START_STK_SIZE,
+		(OS_MSG_QTY  ) 0u,
+		(OS_TICK     ) 0u,
+		(void       *) 0,
+		(OS_OPT      )(OS_OPT_TASK_STK_CHK | OS_OPT_TASK_STK_CLR),
+		(OS_ERR     *)&err);
 }
